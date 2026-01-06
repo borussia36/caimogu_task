@@ -1,4 +1,8 @@
 name: Java CI with Maven
+permissions:  # ← 新增这部分
+  contents: read
+  actions: write
+
 on:
   schedule:
     - cron: '0 9 * * *'
