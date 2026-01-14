@@ -121,6 +121,8 @@ public class App {
                     trueFlag++;
                     acGameIds.add(gamId);
                     log.error("评价成功 " + gamId);
+                } else if (code ==887) {
+                    log.error("评论异常");
                 } else {
                     log.error("无法正常评论游戏");
                     break;
@@ -152,7 +154,7 @@ public class App {
                 break;
             }
             gameCommentIds.add(gameId);
-            int i = CaiMoGuH5Help.acGameCommentReply(gameId, "说的全对,确实很好玩-"+"通关时间:"+idempotentTime+"死亡次数:"+userInfo.getUid());
+            int i = CaiMoGuH5Help.AcGameComment(gameId, "说的全对,确实很好玩-"+"通关时间:"+idempotentTime+"死亡次数:"+userInfo.getUid());
             if (i == 0) {
                 log.error("成功评论游戏库评论:{}", gameId);
                 tempPoint = userInfo.getPoint().intValue();

@@ -29,7 +29,7 @@ public class CaiMoGuH5Help {
 
     private final static Map<String, Integer> ReNumMap = new HashMap<>();
 
-    public static boolean AcGameComment(String gameId) {
+    public static int AcGameComment(String gameId,String content) {
 
         int page = 1;
         boolean hasMore = true;
@@ -46,12 +46,11 @@ public class CaiMoGuH5Help {
                     continue;
                 }
                 String id = item.getString("id");
-                int i = acGameCommentReply(id, "全对,神中神");
-                return i == 0;
+                return acGameCommentReply(id, content);
             }
 
         } while (hasMore);
-        return false;
+        return -1;
 
     }
 
